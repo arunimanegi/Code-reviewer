@@ -1,108 +1,134 @@
-# Code Review Assistant
+# Collaborative AI-Powered Coding Platform
 
-A modern web application that helps developers get AI-powered code reviews for their code snippets. The application uses Google's Generative AI to provide intelligent code reviews and suggestions.
+A real-time collaborative coding platform with AI assistance, built using the MERN stack (MongoDB, Express.js, React.js, Node.js).
 
 ## Features
 
-- Real-time code editing with syntax highlighting
-- AI-powered code review generation
-- Markdown rendering of code reviews
-- Modern and responsive UI
-- Support for JavaScript code review
+- Real-time collaborative coding
+- AI-powered code assistance using Google's Gemini AI
+- User authentication and authorization
+- Project management
+- Real-time chat with AI integration
+- File tree management
+- Code editor with syntax highlighting
 
 ## Tech Stack
 
 ### Frontend
-- React 19
+- React.js
 - Vite
-- React Simple Code Editor
-- Prism.js for syntax highlighting
-- React Markdown for rendering reviews
-- Axios for API calls
+- Socket.IO Client
+- Tailwind CSS
+- React Router
+- Axios
 
 ### Backend
 - Node.js
 - Express.js
-- Google Generative AI
-- CORS support
-- Environment variable configuration
+- MongoDB
+- Socket.IO
+- JWT Authentication
+- Redis
+- Google Generative AI (Gemini)
 
 ## Prerequisites
 
 - Node.js (v14 or higher)
-- npm or yarn
-- Google AI API key
+- MongoDB
+- Redis
+- Google AI API Key
 
-## Installation
+## Setup Instructions
 
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd code-review-main
+cd collaborative-ai-powered-coding-platform
 ```
 
-2. Install dependencies for both frontend and backend:
+2. Install dependencies:
+
+For Backend:
 ```bash
-# Install root dependencies
-npm install
-
-# Install frontend dependencies
-cd Frontend
-npm install
-
-# Install backend dependencies
-cd ../BackEnd
+cd backend
 npm install
 ```
 
-3. Create a `.env` file in the BackEnd directory with your Google AI API key:
-```
-GOOGLE_AI_API_KEY=your_api_key_here
-```
-
-## Running the Application
-
-1. Start the backend server:
+For Frontend:
 ```bash
-cd BackEnd
-npm start
+cd frontend
+npm install
 ```
 
-2. In a new terminal, start the frontend development server:
+3. Environment Setup:
+
+Create a `.env` file in the backend directory with the following variables:
+```
+PORT=3000
+MONGODB_URI=mongodb://localhost:27017/collaborative-coding
+JWT_SECRET=your-secret-key-here
+GOOGLE_AI_KEY=your-google-ai-api-key-here
+```
+
+4. Start the servers:
+
+For Backend:
 ```bash
-cd Frontend
+cd backend
 npm run dev
 ```
 
-3. Open your browser and navigate to `http://localhost:5173`
+For Frontend:
+```bash
+cd frontend
+npm run dev
+```
 
-## Usage
+## Getting Started
 
-1. Write or paste your code in the editor on the left side
-2. Click the "Review" button
-3. View the AI-generated code review on the right side
+1. Register a new account or login with existing credentials
+2. Create a new project
+3. Invite team members to collaborate
+4. Start coding with real-time collaboration
+5. Use @ai in the chat to get AI assistance
 
-## Development
+## API Endpoints
 
-- Frontend runs on port 5173 (Vite default)
-- Backend runs on port 3000
-- The application uses environment variables for configuration
-- Code reviews are generated using Google's Generative AI
+### Authentication
+- POST /users/register - Register a new user
+- POST /users/login - Login user
+- GET /users/logout - Logout user
+
+### Projects
+- POST /projects/create - Create a new project
+- GET /projects/all - Get all projects
+- GET /projects/get-project/:id - Get project by ID
+- PUT /projects/update-file-tree - Update project file tree
+
+### AI Integration
+- WebSocket event: 'project-message' - Send message to AI
+- WebSocket event: 'ai-response' - Receive AI response
+
+## Environment Variables
+
+### Backend (.env)
+- PORT: Server port (default: 3000)
+- MONGODB_URI: MongoDB connection string
+- JWT_SECRET: Secret key for JWT token generation
+- GOOGLE_AI_KEY: Google AI API key
 
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
 
 ## License
 
-This project is licensed under the ISC License.
+This project is licensed under the MIT License.
 
-## Acknowledgments
+## Support
 
-- Google Generative AI for providing the AI capabilities
-- React community for the amazing tools and libraries
-- All contributors who have helped shape this project 
+For support, please open an issue in the GitHub repository. 
